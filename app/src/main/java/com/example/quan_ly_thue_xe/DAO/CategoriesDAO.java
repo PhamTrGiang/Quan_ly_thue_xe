@@ -27,7 +27,7 @@ public class CategoriesDAO {
     }
     public int upadate(Categories obj){
         ContentValues values = new ContentValues();
-        values.put("categories",obj.getName());
+        values.put("name",obj.getName());
 
         return db.update("categories",values,"id=?",new String[]{String.valueOf(obj.getId())});
     }
@@ -54,7 +54,7 @@ public class CategoriesDAO {
         while(c.moveToNext()){
             Categories obj = new Categories();
             obj.setId(Integer.parseInt(c.getString(c.getColumnIndex("id"))));
-            obj.setName(c.getString(c.getColumnIndex("name"))); ;
+            obj.setName(c.getString(c.getColumnIndex("name")));
             list.add(obj);
         }
         return list;
