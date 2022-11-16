@@ -19,7 +19,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.quan_ly_thue_xe.Fragment.Frag_categories;
 import com.example.quan_ly_thue_xe.Fragment.Frag_home;
+import com.example.quan_ly_thue_xe.Fragment.Frag_vehicles;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -53,17 +55,18 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.nav_home:
                         setTitle("Trang chủ");
-                        Frag_home frg = new Frag_home();
-                        replaceFrg̣̣(frg);
+                        Frag_home frag_home = new Frag_home();
+                        replaceFrg̣̣(frag_home);
                         break;
                     case R.id.nav_categories:
                         setTitle("Quản lý loại xe");
-
-
+                        Frag_categories frag_categories = new Frag_categories();
+                        replaceFrg̣̣(frag_categories);
                         break;
                     case R.id.nav_vehicles:
                         setTitle("Quản lý xe");
-
+                        Frag_vehicles frag_vehicles = new Frag_vehicles();
+                        replaceFrg̣̣(frag_vehicles);
 
                         break;
                     case R.id.nav_orders:
