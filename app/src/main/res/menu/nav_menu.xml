@@ -34,6 +34,12 @@
     <item android:title="Người dùng">
         <menu>
             <item
+                android:id="@+id/nav_info"
+                android:icon="@drawable/ic_baseline_person_24"
+                android:title="Thông tin tài khoản"
+
+                />
+            <item
                 android:id="@+id/nav_users"
                 android:icon="@drawable/ic_baseline_people_24"
                 android:title="Quản lý người dùng"
