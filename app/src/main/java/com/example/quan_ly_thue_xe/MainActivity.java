@@ -5,16 +5,21 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.quan_ly_thue_xe.Fragment.Frag_home;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         ab.setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24);
         ab.setDisplayHomeAsUpEnabled(true);
+        Frag_home frg_home = new Frag_home();
+        replaceFrg̣̣(frg_home);
+        phanQuyen();
 
 
         NavigationView nav = findViewById(R.id.nvView);
@@ -45,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.nav_home:
                         setTitle("Trang chủ");
-
-
+                        Frag_home frg = new Frag_home();
+                        replaceFrg̣̣(frg);
                         break;
                     case R.id.nav_categories:
                         setTitle("Quản lý loại xe");
@@ -102,5 +110,19 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fm = getSupportFragmentManager();
         fm.beginTransaction().replace(R.id.flContent,frg).commit();
 
+    }
+
+    public boolean phanQuyen(){
+        if(Build.VERSION.SDK_INT>=23){
+            if(checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
+                    && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED){
+                return true;
+            }else{
+                ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION},1);
+                return false;
+            }
+        }else{
+            return true;
+        }
     }
 }
