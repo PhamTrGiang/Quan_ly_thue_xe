@@ -7,16 +7,8 @@
     android:orientation="vertical"
     tools:context=".Login"
     android:gravity="center"
-    android:background="@drawable/img"
     >
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="100dp"
-
-        >
         <EditText
             android:background="@drawable/backgroup_dn"
             android:layout_width="match_parent"
@@ -35,27 +27,41 @@
             android:shadowRadius="@integer/material_motion_duration_long_2"
             android:background="@drawable/backgrouppas"
             />
-    </LinearLayout>
 
 
-    <LinearLayout
-        android:padding="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        >
+
         <Button
-        android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="Login"
         android:id="@+id/Login"
             android:textStyle="bold|normal"
             android:background="@drawable/backgroud_quanlyloaixe"
         />
-        <Button
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="------------------------Hoặc------------------"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:textStyle="bold"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bạn chưa có tài khoản ư?"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold|italic"
+            android:textSize="20dp"
+            />
+        <Button
+            android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Đăng ký"
@@ -66,6 +72,8 @@
             />
 
     </LinearLayout>
+
+
 
 
 </LinearLayout>

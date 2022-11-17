@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/backdiodk"
     android:gravity="center">
 
     <TextView
@@ -14,19 +13,24 @@
         android:textSize="30dp"
 
         />
+
+    <EditText
+        android:id="@+id/eddn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/backgroup_dn"
+        android:hint="nhập tên đăng nhập"
+
+        />
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="nhập tên đăng nhập"
-            android:id="@+id/eddn"
-            android:layout_marginTop="10dp"
-            />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:hint="nhập pasword"
             android:id="@+id/edmk"
             android:layout_marginTop="10dp"
+            android:background="@drawable/backgrouppas"
+
             />
 
 
@@ -36,7 +40,9 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="50dp"
+            >
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -51,9 +57,13 @@
                 android:text="no"
                 android:id="@+id/no"
                 android:background="@drawable/backyess"
-
                 />
         </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Helo"
+        />
 
 
 
