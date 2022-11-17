@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DbHelper extends SQLiteOpenHelper {
-    static final String DB_NAME = "manager_vehicle";
+    static final String DB_NAME = "manager_vehicl";
     static final int DB_VISION = 1;
 
     public DbHelper(Context context) {
