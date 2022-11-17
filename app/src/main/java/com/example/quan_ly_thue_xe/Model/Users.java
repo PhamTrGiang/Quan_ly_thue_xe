@@ -1,17 +1,32 @@
 package com.example.quan_ly_thue_xe.Model;
 
 public class Users {
-    private int id;
-    private String name,cmt,phone_number;
+    private String name,indentification,phone_number,password,id;
 
     public Users() {
     }
 
-    public int getId() {   
+    public Users( String id, String name, String indentification, String phone_number, String password) {
+        this.name = name;
+        this.indentification = indentification;
+        this.phone_number = phone_number;
+        this.password = password;
+        this.id = id;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -23,12 +38,12 @@ public class Users {
         this.name = name;
     }
 
-    public String getCmt() {
-        return cmt;
+    public String getIndentification() {
+        return indentification;
     }
 
-    public void setCmt(String cmt) {
-        this.cmt = cmt;
+    public void setIndentification(String indentification) {
+        this.indentification = indentification;
     }
 
     public String getPhone_number() {

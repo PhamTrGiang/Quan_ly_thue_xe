@@ -21,6 +21,7 @@ import android.view.View;
 
 import com.example.quan_ly_thue_xe.Fragment.Frag_categories;
 import com.example.quan_ly_thue_xe.Fragment.Frag_home;
+import com.example.quan_ly_thue_xe.Fragment.Frag_users;
 import com.example.quan_ly_thue_xe.Fragment.Frag_vehicles;
 import com.google.android.material.navigation.NavigationView;
 
@@ -82,7 +83,8 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.nav_users:
                         setTitle("Quản lý người dùng");
-
+                        Frag_users frag_users = new Frag_users();
+                        replaceFrg̣̣(frag_users);
 
                         break;
                     case R.id.nav_Doimatkhau:
@@ -91,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
 
                         break;
                     case R.id.nav_Dangxuat:
-                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(),StartScreenActivity.class));
                         finish();
                         break;
                 }
