@@ -67,6 +67,7 @@ public class Login extends AppCompatActivity {
                     if (txtten.getText().toString().equals(ten) && txtpasword.getText().toString().equals(mk)){
                         Toast.makeText(Login.this,"Đăng nhập thành công ",Toast.LENGTH_SHORT).show();
                         Intent intent= new Intent(Login.this, MainActivity2.class);
+//                        intent.putExtra("name",ten);
                         startActivity(intent);
                     }else {
                         Toast.makeText(Login.this, "đăng nhập thất bại", Toast.LENGTH_SHORT).show();

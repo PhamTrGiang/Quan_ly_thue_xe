@@ -16,16 +16,20 @@
             android:hint="Nhập tên đăng nhập"
             android:id="@+id/txtemail"
             android:inputType="textEmailAddress"
+            android:padding="10dp"
+
             />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="nhập password"
+            android:hint="Nhập password"
             android:id="@+id/txtpassword"
             android:layout_marginTop="10dp"
             android:shadowRadius="@integer/material_motion_duration_long_2"
             android:background="@drawable/backgrouppas"
+            android:padding="10dp"
+
             />
 
 
@@ -44,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="------------------------Hoặc------------------"
+        android:text="----------------------Hoặc------------------"
         android:textSize="20dp"
         android:padding="10dp"
         android:textStyle="bold"
@@ -59,6 +63,7 @@
             android:layout_marginTop="20dp"
             android:textStyle="bold|italic"
             android:textSize="20dp"
+            android:textColor="#2B2626"
             />
         <Button
             android:layout_marginTop="20dp"

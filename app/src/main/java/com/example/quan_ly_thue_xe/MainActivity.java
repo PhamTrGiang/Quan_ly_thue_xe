@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     View mHeaderView;
+    NavigationView navigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,12 +36,20 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
         toolbar = findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
+        navigationView=findViewById(R.id.nvView);
+
         ActionBar ab = getSupportActionBar();
         ab.setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24);
         ab.setDisplayHomeAsUpEnabled(true);
         Frag_home frg_home = new Frag_home();
         replaceFrg̣̣(frg_home);
         phanQuyen();
+        //
+//        Intent intent=getIntent();
+//        String ursor=intent.getStringExtra("name");
+//        if (ursor.equals("admin")){
+//            navigationView.getMenu().findItem(R.id.tong1).setVisible(true);
+//        }
 
 
         NavigationView nav = findViewById(R.id.nvView);

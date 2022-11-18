@@ -2,6 +2,7 @@ package com.example.quan_ly_thue_xe.Sile;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
@@ -29,6 +30,9 @@ public class MainActivity2 extends AppCompatActivity {
     private ViewPager2 viewPager2;
     private CircleIndicator3 mcCircleIndicator3;
     private List<photo> mlisphoto;
+    Toolbar toolbar;
+
+
     private ImageView imageView1,imageView2,imageView3,imageView4;
     Handler mHandler= new Handler(Looper.getMainLooper());
     Runnable mRunnable = new Runnable() {
@@ -50,21 +54,18 @@ public class MainActivity2 extends AppCompatActivity {
         imageView2=findViewById(R.id.imgview2);
         imageView2=findViewById(R.id.imgview3);
         imageView3=findViewById(R.id.imgview4);
+        toolbar = findViewById(R.id.toolbar1);
+        setSupportActionBar(toolbar);
 
         imageView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent= new Intent(MainActivity2.this, MainActivity.class);
                 startActivity(intent);
+
             }
         });
-        imageView2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent= new Intent(MainActivity2.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
+
 
         // sile
         viewPager2=findViewById(R.id.view_pager2);
