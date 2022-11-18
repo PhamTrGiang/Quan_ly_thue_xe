@@ -52,8 +52,8 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
         imageView1=findViewById(R.id.imgview1);
         imageView2=findViewById(R.id.imgview2);
-        imageView2=findViewById(R.id.imgview3);
-        imageView3=findViewById(R.id.imgview4);
+        imageView3=findViewById(R.id.imgview3);
+        imageView4=findViewById(R.id.imgview4);
         toolbar = findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
 
@@ -63,6 +63,13 @@ public class MainActivity2 extends AppCompatActivity {
                 Intent intent= new Intent(MainActivity2.this, MainActivity.class);
                 startActivity(intent);
 
+            }
+        });
+        imageView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity2.this,settinh.class);
+                startActivity(intent);
             }
         });
 
