@@ -14,6 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Quan_ly_thue_xe">
         <activity
+            android:name=".Sile.Cuahang"
+            android:exported="false" />
+        <activity
+            android:name=".Sile.Hoadon"
+            android:exported="false" />
+        <activity
             android:name=".Account.RegisterAccountActivity"
             android:exported="false" />
         <activity
@@ -21,6 +27,12 @@
             android:exported="false" />
         <activity
             android:name=".Account.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Sile.settinh"
+            android:exported="false" />
+        <activity
+            android:name=".Sile.MainActivity2"
             android:exported="false" />
         <activity
             android:name=".InfomationActivity"

@@ -78,7 +78,6 @@ public class UsersDAO {
         if(list.size()==0)
             return -1;
         return 1;
-
     }
     @SuppressLint("Range")
     public int check(String id){
@@ -100,4 +99,5 @@ public class UsersDAO {
 
 
     }
+
 }

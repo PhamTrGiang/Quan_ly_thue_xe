@@ -14,11 +14,13 @@ import com.example.quan_ly_thue_xe.DAO.UsersDAO;
 import com.example.quan_ly_thue_xe.MainActivity;
 import com.example.quan_ly_thue_xe.Model.Users;
 import com.example.quan_ly_thue_xe.R;
+import com.example.quan_ly_thue_xe.Sile.MainActivity2;
 
 public class LoginActivity extends AppCompatActivity {
     EditText edUsername,edPassword;
     Button btnLogin;
     UsersDAO dao;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +47,9 @@ public class LoginActivity extends AppCompatActivity {
             if(dao.checkLogin(strUser,strPass)>0){
                 Toast.makeText(this, "Login thành công", Toast.LENGTH_SHORT).show();
 
-                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+//                rememberUser(strUser,strPass,chkRememberPass.isChecked());
+                Intent i = new Intent(getApplicationContext(), MainActivity2.class);
+
                 i.putExtra("id",strUser);
                 startActivity(i);
                 finish();
