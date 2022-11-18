@@ -78,15 +78,18 @@ public class UsersDAO {
         if(list.size()==0)
             return -1;
         return 1;
-
     }
     @SuppressLint("Range")
     public int check(String id){
-        String sql = "SELECT id FROM users WHERE id="+id;
-        Cursor c = db.rawQuery(sql,null);
         String user = "";
-        while(c.moveToNext()){
-            user = c.getString(c.getColumnIndex("id"));
+        try {
+            String sql = "SELECT id FROM users WHERE id="+id;
+            Cursor c = db.rawQuery(sql,null);
+            while(c.moveToNext()){
+                user = c.getString(c.getColumnIndex("id"));
+            }
+        }catch (Exception ex){
+            return 1;
         }
         if (user.equals("")){
             return 1;
@@ -94,4 +97,5 @@ public class UsersDAO {
             return -1;
         }
     }
+
 }

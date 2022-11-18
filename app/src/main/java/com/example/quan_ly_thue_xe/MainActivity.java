@@ -23,6 +23,7 @@ import com.example.quan_ly_thue_xe.Fragment.Frag_categories;
 import com.example.quan_ly_thue_xe.Fragment.Frag_home;
 import com.example.quan_ly_thue_xe.Fragment.Frag_users;
 import com.example.quan_ly_thue_xe.Fragment.Frag_vehicles;
+import com.example.quan_ly_thue_xe.Sile.MainActivity2;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -56,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.nav_home:
                         setTitle("Trang chủ");
-                        Frag_home frag_home = new Frag_home();
-                        replaceFrg̣̣(frag_home);
+                        Intent i = new Intent(getBaseContext(),MainActivity2.class);
+                        startActivity(i);
                         break;
                     case R.id.nav_categories:
                         setTitle("Quản lý loại xe");
@@ -78,24 +79,14 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.nav_Bangxephang:
                         setTitle("Bảng xếp hạng");
 
-
                         break;
-
                     case R.id.nav_users:
                         setTitle("Quản lý người dùng");
                         Frag_users frag_users = new Frag_users();
                         replaceFrg̣̣(frag_users);
 
                         break;
-                    case R.id.nav_Doimatkhau:
-                        setTitle("Đổi mật khẩu");
 
-
-                        break;
-                    case R.id.nav_Dangxuat:
-                        startActivity(new Intent(getApplicationContext(),StartScreenActivity.class));
-                        finish();
-                        break;
                 }
                 drawerLayout.closeDrawers();
                 return false;
