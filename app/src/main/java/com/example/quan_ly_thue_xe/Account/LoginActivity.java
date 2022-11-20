@@ -6,15 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.quan_ly_thue_xe.DAO.UsersDAO;
-import com.example.quan_ly_thue_xe.MainActivity;
+import com.example.quan_ly_thue_xe.Framentkhachhang.Menu;
 import com.example.quan_ly_thue_xe.Model.Users;
 import com.example.quan_ly_thue_xe.R;
-import com.example.quan_ly_thue_xe.Sile.MainActivity2;
 
 public class LoginActivity extends AppCompatActivity {
     EditText edUsername,edPassword;
@@ -47,8 +45,7 @@ public class LoginActivity extends AppCompatActivity {
             if(dao.checkLogin(strUser,strPass)>0){
                 Toast.makeText(this, "Login thành công", Toast.LENGTH_SHORT).show();
 
-//                rememberUser(strUser,strPass,chkRememberPass.isChecked());
-                Intent i = new Intent(getApplicationContext(), MainActivity2.class);
+                Intent i = new Intent(getApplicationContext(), Menu.class);
 
                 i.putExtra("id",strUser);
                 startActivity(i);

@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:text="access"
             android:layout_marginRight="50dp"
-            android:background="@drawable/backgroup_quanlyxe"
+            android:background="@drawable/backgroup_button_color"
             />
         <Button
             android:id="@+id/btnCancel"

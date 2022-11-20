@@ -20,6 +20,7 @@ public class RegisterAccountActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
         btnNext = findViewById(R.id.btnRegister);
         edUser = findViewById(R.id.edUsername);
         edPass = findViewById(R.id.edPassword);

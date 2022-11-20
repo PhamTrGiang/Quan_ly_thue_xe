@@ -1,4 +1,4 @@
-package com.example.quan_ly_thue_xe;
+package com.example.quan_ly_thue_xe.Framentkhachhang;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -23,7 +23,7 @@ import com.example.quan_ly_thue_xe.Fragment.Frag_categories;
 import com.example.quan_ly_thue_xe.Fragment.Frag_home;
 import com.example.quan_ly_thue_xe.Fragment.Frag_users;
 import com.example.quan_ly_thue_xe.Fragment.Frag_vehicles;
-import com.example.quan_ly_thue_xe.Sile.MainActivity2;
+import com.example.quan_ly_thue_xe.R;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         drawerLayout = findViewById(R.id.drawer_layout);
         toolbar = findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         Frag_home frg_home = new Frag_home();
         replaceFrg̣̣(frg_home);
         phanQuyen();
+
 
 
         NavigationView nav = findViewById(R.id.nvView);
@@ -57,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.nav_home:
                         setTitle("Trang chủ");
-                        Intent i = new Intent(getBaseContext(),MainActivity2.class);
+                        Intent i = new Intent(getBaseContext(), Menu.class);
                         startActivity(i);
                         break;
                     case R.id.nav_categories:

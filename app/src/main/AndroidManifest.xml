@@ -14,10 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Quan_ly_thue_xe">
         <activity
-            android:name=".Sile.Cuahang"
-            android:exported="false" />
-        <activity
-            android:name=".Sile.Hoadon"
+            android:name=".Framentkhachhang.Menu"
             android:exported="false" />
         <activity
             android:name=".Account.RegisterAccountActivity"
@@ -29,16 +26,10 @@
             android:name=".Account.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".Sile.settinh"
-            android:exported="false" />
-        <activity
-            android:name=".Sile.MainActivity2"
-            android:exported="false" />
-        <activity
             android:name=".InfomationActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Framentkhachhang.MainActivity"
             android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
