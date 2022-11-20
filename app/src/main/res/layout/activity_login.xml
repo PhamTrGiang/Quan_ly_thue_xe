@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="10dp"
+        android:padding="15dp"
         >
         <EditText
             android:id="@+id/edUsername"
@@ -32,7 +32,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Login" />
+            android:text="Login"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/backgroup_button_color"
+            android:textColor="@color/white"
+            android:textSize="17dp"
+            />
 
     </LinearLayout>
 

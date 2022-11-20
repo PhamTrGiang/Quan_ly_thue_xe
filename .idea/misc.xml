@@ -26,12 +26,23 @@
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe_2/app/src/main/res/layout/dig_vehicles.xml" value="0.25" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe_2/app/src/main/res/layout/fragment_frag_categories.xml" value="0.15760869565217392" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe_2/app/src/main/res/layout/fragment_frag_user.xml" value="0.25" />
-
         <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang/app/src/main/res/layout/activity_main2.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang/app/src/main/res/layout/activity_main3.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang/app/src/main/res/layout/activity_main4.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang/app/src/main/res/layout/activity_settinh.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang/app/src/main/res/menu/nav_menu.xml" value="0.25" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/drawable/backgroud_quanlyloaixe.xml" value="0.1775" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/drawable/backgroup_button_nocolor.xml" value="0.1775" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/drawable/backgroup_quanlyxe.xml" value="0.1775" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/layout/activity_menu.xml" value="0.264" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/layout/activity_register.xml" value="0.22826086956521738" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/layout/activity_register_info.xml" value="0.22826086956521738" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/layout/activity_start_screen.xml" value="0.22826086956521738" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/layout/fragment_settinh.xml" value="0.22826086956521738" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/layout/layout_users.xml" value="0.22826086956521738" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/menu/menu_bootom_nav.xml" value="0.25" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/menu/nav_menu.xml" value="0.25" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang/app/src/main/res/drawable-v24/bg_indicator.xml" value="0.154" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang/app/src/main/res/drawable-v24/bksua.xml" value="0.154" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang/app/src/main/res/drawable-v24/cuahang.xml" value="0.154" />
@@ -45,7 +56,40 @@
         <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang/app/src/main/res/layout/activity_start_screen.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang/app/src/main/res/layout/item_photo.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang/app/src/main/res/layout/layout_dialogthongtin.xml" value="0.6115288220551378" />
-
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/activity_infomation.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/activity_main2.xml" value="0.264" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/activity_main3.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/activity_main4.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/activity_menu.xml" value="0.264" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/activity_register_info.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/activity_settinh.xml" value="0.264" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/activity_start_screen.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/dig_categories.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/dig_vehicles.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/fragment_admin.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/fragment_cuahang.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/fragment_frag_categories.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/fragment_frag_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/fragment_frag_user.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/fragment_frag_vehicles.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/fragment_orders.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/fragment_settinh.xml" value="0.4" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/item_categories.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/item_photo.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/item_spinner.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/item_vehicles.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/layout_category.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/layout_dialogthongtin.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/layout_orders.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/layout_users.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/layout_vehicles.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/layout/nav_header.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/menu/menu_bootom_nav.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Quan_ly_thue_xegiang1/app/src/main/res/menu/nav_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/duan1/app/src/main/res/layout/layout_category.xml" value="0.358695652173913" />
         <entry key="..\:/duan1/app/src/main/res/layout/layout_orders.xml" value="0.358695652173913" />
         <entry key="..\:/duan1/app/src/main/res/layout/layout_users.xml" value="0.358695652173913" />

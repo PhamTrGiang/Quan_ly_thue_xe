@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:hint="Categories"
         android:padding="10dp"
-        android:background="@drawable/backgroup_quanlyxe"
+        android:background="@drawable/backgroup_button_color"
         />
 
     <LinearLayout
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:text="access"
             android:layout_marginRight="50dp"
-            android:background="@drawable/backgroup_quanlyxe"
+            android:background="@drawable/backgroup_button_color"
             />
 
         <Button

@@ -11,7 +11,6 @@
             android:title="Quản lý loại xe"/>
         <item
             android:id="@+id/nav_vehicles"
-
             android:title="Quản lý xe"/>
         <item
             android:id="@+id/nav_orders"

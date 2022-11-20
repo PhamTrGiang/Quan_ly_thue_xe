@@ -35,6 +35,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Register"
+            android:background="@drawable/backgroup_button_color"
+            android:textColor="@color/white"
+            android:textSize="17dp"
+            android:layout_marginTop="20dp"
             android:layout_gravity="center"/>
     </LinearLayout>
 

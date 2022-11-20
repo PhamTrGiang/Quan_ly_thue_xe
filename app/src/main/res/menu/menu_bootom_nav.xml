@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/action_hom"
+        android:title="@string/action_hom"
+        android:icon="@drawable/home"
+        />
+    <item android:id="@+id/action_cuhang"
+        android:title="@string/action_cuahang"
+        android:icon="@drawable/cuahang"
+     />
+    <item android:id="@+id/action_donhang"
+    android:title="@string/action_don"
+    android:icon="@drawable/hoadon"
+    />
+    <item android:id="@+id/acti_caidat"
+        android:title="@string/action_settinh"
+        android:icon="@drawable/settinh"
+        />
+
+</menu>
