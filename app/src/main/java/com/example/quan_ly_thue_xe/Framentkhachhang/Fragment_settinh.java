@@ -13,9 +13,10 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.example.quan_ly_thue_xe.R;
+import com.example.quan_ly_thue_xe.StartScreenActivity;
 
 public class Fragment_settinh extends Fragment {
-LinearLayout admin1;
+LinearLayout admin1,linearLogout;
 
 
     public Fragment_settinh() {
@@ -24,7 +25,6 @@ LinearLayout admin1;
 
     public static Fragment_settinh newInstance() {
         Fragment_settinh fragment = new Fragment_settinh();
-
         return fragment;
     }
 
@@ -37,7 +37,7 @@ LinearLayout admin1;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_settinh, container, false);
+        View v = inflater.inflate(R.layout.fragment_settinh, container, false);
 //        admin1=container.findViewById(R.id.admin1);
 //        admin1.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -47,7 +47,16 @@ LinearLayout admin1;
 //
 //            }
 //        });
+        linearLogout = v.findViewById(R.id.linearLogout);
+        linearLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent iLogout = new Intent(getContext(), StartScreenActivity.class);
+                startActivity(iLogout);
 
+            }
+        });
+        return v;
     }
 
 
@@ -60,8 +69,6 @@ LinearLayout admin1;
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(),MainActivity.class);
                 startActivity(intent);
-
-
             }
         });
     }
