@@ -28,16 +28,16 @@ public class UsersDAO {
         values.put("password",obj.getPassword());
         values.put("indentification",obj.getIndentification());
         values.put("phone_number",obj.getPhone_number());
-
+        values.put("status",obj.getStatus());
         return db.insert("users",null,values);
     }
     public int upadate(Users obj){
         ContentValues values = new ContentValues();
-        values.put("id",obj.getId());
         values.put("name",obj.getName());
         values.put("password",obj.getPassword());
         values.put("indentification",obj.getIndentification());
         values.put("phone_number",obj.getPhone_number());
+        values.put("status",obj.getStatus());
         return db.update("users",values,"id=?",new String[]{String.valueOf(obj.getId())});
     }
 
@@ -52,7 +52,7 @@ public class UsersDAO {
 
     public Users getId(String id){
         String sql = "SELECT * FROM users WHERE id=?";
-        List<Users> list = getData(sql);
+        List<Users> list = getData(sql,id);
         return list.get(0);
     }
 
@@ -67,6 +67,7 @@ public class UsersDAO {
             obj.setName(c.getString(c.getColumnIndex("name")));
             obj.setIndentification(c.getString(c.getColumnIndex("indentification")));
             obj.setPhone_number(c.getString(c.getColumnIndex("phone_number")));
+            obj.setStatus(Integer.parseInt(c.getString(c.getColumnIndex("status"))));
             list.add(obj);
         }
         return list;
@@ -96,8 +97,6 @@ public class UsersDAO {
         }else{
             return -1;
         }
-
-
     }
 
 }

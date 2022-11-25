@@ -42,6 +42,7 @@ public class RegisterInfoActivity extends AppCompatActivity {
                     obj.setName(edName.getText().toString());
                     obj.setPhone_number(edPhoneNumber.getText().toString());
                     obj.setIndentification(edIndentification.getText().toString());
+                    obj.setStatus(1);
                     if(dao.insert(obj)>0){
                         Toast.makeText(RegisterInfoActivity.this, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
                         Intent home = new Intent(getBaseContext(), StartScreenActivity.class);

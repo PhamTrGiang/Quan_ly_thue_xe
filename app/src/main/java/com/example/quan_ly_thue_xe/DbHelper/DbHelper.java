@@ -15,7 +15,7 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String tb_users = "CREATE TABLE users (id TEXT PRIMARY KEY,name TEXT,indentification TEXT,phone_number TEXT,password TEXT)";
+        String tb_users = "CREATE TABLE users (id TEXT PRIMARY KEY,name TEXT,indentification TEXT,phone_number TEXT,password TEXT,status INTEGER)";
         db.execSQL(tb_users);
         String tb_categories ="CREATE TABLE categories (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT)";
         db.execSQL(tb_categories);
