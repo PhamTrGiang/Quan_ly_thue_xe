@@ -12,12 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.example.quan_ly_thue_xe.ChangePassActivity;
 import com.example.quan_ly_thue_xe.InfomationActivity;
 import com.example.quan_ly_thue_xe.R;
 import com.example.quan_ly_thue_xe.StartScreenActivity;
 
 public class Fragment_settinh extends Fragment {
-LinearLayout admin1,linearLogout,linearInfo;
+LinearLayout admin1,linearLogout,linearInfo,linearChange;
 
 
     public Fragment_settinh() {
@@ -48,6 +49,14 @@ LinearLayout admin1,linearLogout,linearInfo;
 //
 //            }
 //        });
+        linearChange = v.findViewById(R.id.tvmk);
+        linearChange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent iChange = new Intent(getContext(), ChangePassActivity.class);
+                startActivity(iChange);
+            }
+        });
         linearInfo = v.findViewById(R.id.thongtin);
         linearInfo.setOnClickListener(new View.OnClickListener() {
             @Override
