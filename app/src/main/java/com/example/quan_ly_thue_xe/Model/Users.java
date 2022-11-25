@@ -2,16 +2,26 @@ package com.example.quan_ly_thue_xe.Model;
 
 public class Users {
     private String name,indentification,phone_number,password,id;
-
+    private int status;
     public Users() {
     }
 
-    public Users( String id, String name, String indentification, String phone_number, String password) {
+
+    public Users(String name, String indentification, String phone_number, String password, String id, int status) {
         this.name = name;
         this.indentification = indentification;
         this.phone_number = phone_number;
         this.password = password;
         this.id = id;
+        this.status = status;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     public String getPassword() {

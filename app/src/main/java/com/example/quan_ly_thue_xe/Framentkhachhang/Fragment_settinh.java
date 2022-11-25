@@ -12,11 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.example.quan_ly_thue_xe.InfomationActivity;
 import com.example.quan_ly_thue_xe.R;
 import com.example.quan_ly_thue_xe.StartScreenActivity;
 
 public class Fragment_settinh extends Fragment {
-LinearLayout admin1,linearLogout;
+LinearLayout admin1,linearLogout,linearInfo;
 
 
     public Fragment_settinh() {
@@ -47,6 +48,14 @@ LinearLayout admin1,linearLogout;
 //
 //            }
 //        });
+        linearInfo = v.findViewById(R.id.thongtin);
+        linearInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent iInfo = new Intent(getContext(), InfomationActivity.class);
+                startActivity(iInfo);
+            }
+        });
         linearLogout = v.findViewById(R.id.linearLogout);
         linearLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +66,8 @@ LinearLayout admin1,linearLogout;
             }
         });
         return v;
+
+
     }
 
 

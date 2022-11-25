@@ -3,6 +3,7 @@ package com.example.quan_ly_thue_xe.Account;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,11 +28,12 @@ public class LoginActivity extends AppCompatActivity {
         edPassword = findViewById(R.id.edPassword);
         btnLogin = findViewById(R.id.btnAccess);
         dao = new UsersDAO(this);
-        dao.insert(new Users("admin","Phạm Trường Giang","04352346","0123456789","admin"));
+        dao.insert(new Users("Phạm Trường Giang","0123456789","04352346","admin","admin",1));
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 checkLogin();
+
             }
         });
     }
@@ -44,10 +46,11 @@ public class LoginActivity extends AppCompatActivity {
         }else{
             if(dao.checkLogin(strUser,strPass)>0){
                 Toast.makeText(this, "Login thành công", Toast.LENGTH_SHORT).show();
-
                 Intent i = new Intent(getApplicationContext(), Menu.class);
-
-                i.putExtra("id",strUser);
+                SharedPreferences pref = getSharedPreferences("USER_FILE",MODE_PRIVATE);
+                SharedPreferences.Editor edit = pref.edit();
+                edit.putString("id",strUser);
+                edit.commit();
                 startActivity(i);
                 finish();
             }else{
