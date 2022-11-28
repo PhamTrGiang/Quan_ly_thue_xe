@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
         edPassword = findViewById(R.id.edPassword);
         btnLogin = findViewById(R.id.btnAccess);
         dao = new UsersDAO(this);
-        dao.insert(new Users("Phạm Trường Giang","0123456789","04352346","admin","admin",1));
+        dao.insert(new Users("Phạm Trường Giang","0123456789","04352346","admin","admin",3));
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

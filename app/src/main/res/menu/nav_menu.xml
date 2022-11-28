@@ -30,7 +30,9 @@
                 android:title="Doanh thu"/>
         </menu>
     </item>
-    <item android:title="Người dùng">
+    <item android:title="Người dùng"
+        android:id="@+id/iUser"
+        android:visible="false">
         <menu>
             <item
                 android:id="@+id/nav_users"
