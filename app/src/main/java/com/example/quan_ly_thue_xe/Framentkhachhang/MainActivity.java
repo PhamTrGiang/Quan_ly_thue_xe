@@ -13,23 +13,31 @@ import androidx.fragment.app.FragmentManager;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
+import com.example.quan_ly_thue_xe.DAO.UsersDAO;
 import com.example.quan_ly_thue_xe.Fragment.Frag_categories;
 import com.example.quan_ly_thue_xe.Fragment.Frag_home;
 import com.example.quan_ly_thue_xe.Fragment.Frag_users;
 import com.example.quan_ly_thue_xe.Fragment.Frag_vehicles;
+import com.example.quan_ly_thue_xe.Model.Users;
 import com.example.quan_ly_thue_xe.R;
 import com.google.android.material.navigation.NavigationView;
+
 
 public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     View mHeaderView;
+    UsersDAO dao;
+    TextView tvUser , tvPosition;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,12 +51,36 @@ public class MainActivity extends AppCompatActivity {
         ab.setDisplayHomeAsUpEnabled(true);
         Frag_home frg_home = new Frag_home();
         replaceFrg̣̣(frg_home);
+        dao = new UsersDAO(this);
         phanQuyen();
+        SharedPreferences pref = getSharedPreferences("USER_FILE",MODE_PRIVATE);
+        String id = pref.getString("id",null);
+        Users obj = dao.getId(id);
 
 
 
         NavigationView nav = findViewById(R.id.nvView);
         mHeaderView = nav.getHeaderView(0);
+        tvUser = mHeaderView.findViewById(R.id.tvUser);
+        tvPosition = mHeaderView.findViewById(R.id.tvPosition);
+        tvUser.setText("Username : "+obj.getId());
+        String Position;
+        if(obj.getStatus()==1){
+            Position = "Khách hàng";
+        }else if (obj.getStatus()==2){
+            Position = "Nhân viên";
+        }else{
+            Position = "Quản trị viên";
+        }
+        tvPosition.setText("Position : "+Position);
+
+
+        if(obj.getStatus()==3){
+            nav.getMenu().findItem(R.id.iUser).setVisible(true);
+        }else{
+            nav.getMenu().findItem(R.id.iUser).setVisible(false);
+        }
+
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout,toolbar,R.string.navigationdrawer_open,R.string.navigationdrawer_close);
         drawerLayout.addDrawerListener(toggle);

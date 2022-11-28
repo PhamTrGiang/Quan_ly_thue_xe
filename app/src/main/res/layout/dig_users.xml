@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="400dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    >
+    <TextView
+        android:text="Infomation account"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="25dp"/>
+    <TextView
+        android:id="@+id/tvUser"
+        android:text="Username        : Admin"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="Fullname          : Phạm Trường Giang"
+        android:textSize="20dp"
+        android:id="@+id/tvName"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="Phonenumber : 0123456789"
+        android:textSize="20dp"
+        android:id="@+id/tvPhone"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="Identification   : 0123456789123"
+        android:textSize="20dp"
+        android:id="@+id/tvIden"
+        android:textColor="@color/black"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Spinner
+        android:id="@+id/spPosition"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textAlignment="center"
+        />
+    <Button
+        android:id="@+id/btnDone"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:text="done"
+        android:layout_gravity="center"
+        android:background="@drawable/backgroup_button_color"/>
+</LinearLayout>
