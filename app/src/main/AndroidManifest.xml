@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Quan_ly_thue_xe">
         <activity
+            android:name=".ChangePassActivity"
+            android:exported="false" />
+        <activity
             android:name=".Framentkhachhang.Menu"
             android:exported="false" />
         <activity

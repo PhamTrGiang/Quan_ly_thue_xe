@@ -40,6 +40,11 @@ public class UsersDAO {
         values.put("status",obj.getStatus());
         return db.update("users",values,"id=?",new String[]{String.valueOf(obj.getId())});
     }
+    public int changePass(Users obj){
+        ContentValues values = new ContentValues();
+        values.put("password",obj.getPassword());
+        return db.update("users",values,"id=?",new String[]{String.valueOf(obj.getId())});
+    }
 
     public int delete(String id){
         return db.delete("users","id=?",new String[]{id});

@@ -14,15 +14,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+
 import com.example.quan_ly_thue_xe.DAO.UsersDAO;
+
 import com.example.quan_ly_thue_xe.InfomationActivity;
 import com.example.quan_ly_thue_xe.Model.Users;
 import com.example.quan_ly_thue_xe.R;
 import com.example.quan_ly_thue_xe.StartScreenActivity;
 
 public class Fragment_settinh extends Fragment {
+
     LinearLayout admin1,linearLogout,linearInfo;
     UsersDAO dao;
+
 
     public Fragment_settinh() {
     }
@@ -43,6 +47,7 @@ public class Fragment_settinh extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_settinh, container, false);
+
         SharedPreferences pref = getActivity().getSharedPreferences("USER_FILE", Context.MODE_PRIVATE);
         String id = pref.getString("id",null);
         dao = new UsersDAO(getContext());
@@ -59,6 +64,7 @@ public class Fragment_settinh extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(),MainActivity.class);
                 startActivity(intent);
+
 
             }
         });
