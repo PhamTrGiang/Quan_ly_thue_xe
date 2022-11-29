@@ -3,8 +3,17 @@ package com.example.quan_ly_thue_xe.Model;
 public class Vehicles {
     private int id,categories_id,price;
     private String name;
+    byte[] image;
 
     public Vehicles() {
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 
     public int getId() {

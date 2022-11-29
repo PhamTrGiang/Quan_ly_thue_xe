@@ -1,6 +1,8 @@
 package com.example.quan_ly_thue_xe.Adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +27,7 @@ public class Vehicles_Adapter extends ArrayAdapter<Vehicles> {
     Frag_vehicles fragment;
     private ArrayList<Vehicles> list;
     TextView tvName,tvCate,tvPrice;
-    ImageView imgDel,imgEdit;
+    ImageView imgDel,imgEdit,imgImage;
 
     public Vehicles_Adapter(@NonNull Context context, Frag_vehicles fragment, ArrayList<Vehicles> list) {
         super(context, 0,list);
@@ -49,10 +51,16 @@ public class Vehicles_Adapter extends ArrayAdapter<Vehicles> {
             tvName = v.findViewById(R.id.tvName);
             tvCate = v.findViewById(R.id.tvCate);
             tvPrice = v.findViewById(R.id.tvPrice);
+            imgImage = v.findViewById(R.id.imgPicture);
 
             tvName.setText(item.getName());
             tvPrice.setText(item.getPrice()+"");
             tvCate.setText(categories.getName());
+            byte[] image = item.getImage();
+            Bitmap bitmap = BitmapFactory.decodeByteArray(image,0,image.length);
+            imgImage.setImageBitmap(bitmap);
+
+
             imgDel=v.findViewById(R.id.imgDel);
             imgEdit=v.findViewById(R.id.imgEdit);
         }

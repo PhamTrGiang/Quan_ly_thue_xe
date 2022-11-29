@@ -35,9 +35,9 @@
         android:padding="10dp">
 
         <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/imgButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             app:srcCompat="@drawable/ic_baseline_image_24"
             android:layout_marginRight="20dp"/>
         <TextView
@@ -60,14 +60,16 @@
             android:layout_height="wrap_content"
             android:text="access"
             android:layout_marginRight="50dp"
+            android:textColor="@color/white"
             android:background="@drawable/backgroup_button_color"
             />
         <Button
             android:id="@+id/btnCancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/backgroud_quanlyloaixe"
-            android:text="cancel"/>
+            android:background="@drawable/backgroup_button_nocolor"
+            android:text="cancel"
+            android:textColor="@color/teal_200"/>
 
     </LinearLayout>
 
