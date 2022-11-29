@@ -1,19 +1,36 @@
 package com.example.quan_ly_thue_xe.Fragment;
 
+import static android.app.Activity.RESULT_OK;
+
+import android.Manifest;
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Camera;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -25,11 +42,16 @@ import com.example.quan_ly_thue_xe.Adapter.Vehicles_Adapter;
 
 import com.example.quan_ly_thue_xe.DAO.CategoriesDAO;
 import com.example.quan_ly_thue_xe.DAO.VehiclesDAO;
+import com.example.quan_ly_thue_xe.Framentkhachhang.MainActivity;
 import com.example.quan_ly_thue_xe.Model.Categories;
 import com.example.quan_ly_thue_xe.Model.Vehicles;
 import com.example.quan_ly_thue_xe.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,15 +96,19 @@ public class Frag_vehicles extends Fragment {
         });
         return v;
     }
+    ImageButton imgButton;
 
     public void openDialog(final Context context, final int type, Vehicles obj){
         dialog = new Dialog(context);
         dialog.setContentView(R.layout.dig_vehicles);
+
         edName = dialog.findViewById(R.id.edName);
         edPrice = dialog.findViewById(R.id.edPrice);
         spinner = dialog.findViewById(R.id.spinner);
         btnAccess=dialog.findViewById(R.id.btnAccess);
         btnCancel = dialog.findViewById(R.id.btnCancel);
+        imgButton = dialog.findViewById(R.id.imgButton);
+
 
         categoriesDAO = new CategoriesDAO(context);
         listCategories = new ArrayList<Categories>();
@@ -104,13 +130,16 @@ public class Frag_vehicles extends Fragment {
 
         if (type !=0){
             edName.setText(obj.getName());
-            edPrice.setText(obj.getPrice());
+            edPrice.setText(obj.getPrice()+"");
             for (int i =0 ; i<listCategories.size();i++){
                 if(obj.getId() == (listCategories.get(i).getId())){
                     position = i;
                 }
             }
             spinner.setSelection(position);
+            byte[] image = obj.getImage();
+            Bitmap bitmap = BitmapFactory.decodeByteArray(image,0,image.length);
+            imgButton.setImageBitmap(bitmap);
         }
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,7 +156,13 @@ public class Frag_vehicles extends Fragment {
                     item = new Vehicles();
                     item.setName(edName.getText().toString());
                     item.setPrice(Integer.parseInt(edPrice.getText().toString()));
-                    item.setCategories_id(categories_id);   
+                    item.setCategories_id(categories_id);
+                    BitmapDrawable bitmapDrawable = (BitmapDrawable) imgButton.getDrawable();
+                    Bitmap bitmap = bitmapDrawable.getBitmap();
+                    ByteArrayOutputStream byteArray = new ByteArrayOutputStream();
+                    bitmap.compress(Bitmap.CompressFormat.PNG,100,byteArray);
+                    byte[] image = byteArray.toByteArray();
+                    item.setImage(image);
                     if(type==0){
                         if(dao.insert(item)>0){
                             Toast.makeText(context, "Thêm thành công", Toast.LENGTH_SHORT).show();
@@ -138,6 +173,7 @@ public class Frag_vehicles extends Fragment {
                         obj.setName(edName.getText().toString());
                         obj.setPrice(Integer.parseInt(edPrice.getText().toString()));
                         obj.setCategories_id(categories_id);
+                        obj.setImage(image);
                         if (dao.upadate(obj)>0){
                             Toast.makeText(context, "Sửa thành công", Toast.LENGTH_SHORT).show();
                         }else{
@@ -149,8 +185,78 @@ public class Frag_vehicles extends Fragment {
                 }
             }
         });
-        dialog.show();
 
+
+        imgButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDialogaddImg(context);
+            }
+        });
+        dialog.show();
+    }
+
+
+
+    final int REQUEST_CODE_CAMERA = 123;
+    final int REQUEST_CODE_FOLDER = 456;
+    Button btnCamera,btnLibrary,btnCancel2;
+    public void openDialogaddImg(Context context){
+        Dialog dialogImg = new Dialog(context);
+        dialogImg.setContentView(R.layout.dig_chose_image);
+        btnCamera = dialogImg.findViewById(R.id.btnCamera);
+        btnLibrary = dialogImg.findViewById(R.id.btnLibrary);
+        btnCancel2 = dialogImg.findViewById(R.id.btnCancel);
+
+        btnCamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i1 = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(i1,REQUEST_CODE_CAMERA);
+            }
+        });
+
+        btnLibrary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i2 = new Intent(Intent.ACTION_PICK);
+                i2.setType("image/*");
+                startActivityForResult(i2,REQUEST_CODE_FOLDER);
+            }
+        });
+
+        btnCancel2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogImg.dismiss();
+
+            }
+        });
+
+        dialogImg.show();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode == REQUEST_CODE_CAMERA && resultCode == Activity.RESULT_OK && data!=null){
+            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+            imgButton.setImageBitmap(bitmap);
+        }
+        if (requestCode == REQUEST_CODE_FOLDER && resultCode == Activity.RESULT_OK && data!=null){
+            Uri uri = data.getData();
+
+            try {
+                InputStream inputStream = getActivity().getContentResolver().openInputStream(uri);
+                Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+                imgButton.setImageBitmap(bitmap);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+
+
+        }
+
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     public void xoa(final String id){
