@@ -69,6 +69,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Password"
+            android:layout_marginTop="10dp"
             android:inputType="textPassword" />
 
         <Button

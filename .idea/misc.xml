@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/drawable/img_info.xml" value="0.1775" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/activity_change_pass.xml" value="0.22826086956521738" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/activity_infomation.xml" value="0.22826086956521738" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/activity_register.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/dig_categories.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/dig_vehicle.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/dig_vehicles.xml" value="0.13994565217391305" />
@@ -11,6 +16,7 @@
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/fragment_frag_categories.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/fragment_frag_home.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/fragment_frag_vehicles.xml" value="0.22826086956521738" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/fragment_settinh.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/item_categories.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/item_spinner.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/item_vehicles.xml" value="0.22826086956521738" />
