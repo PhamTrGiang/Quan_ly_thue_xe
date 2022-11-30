@@ -36,6 +36,7 @@
         <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/drawable/backgroup_button_color.xml" value="0.1775" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/drawable/backgroup_button_nocolor.xml" value="0.1775" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/drawable/backgroup_quanlyxe.xml" value="0.1775" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/drawable/button_setting.xml" value="0.1775" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/layout/activity_infomation.xml" value="0.264" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
@@ -54,7 +55,7 @@
         <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/layout/item_photo.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/layout/item_spinner.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/layout/item_users.xml" value="0.25" />
-        <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/layout/item_vehicles.xml" value="0.22146739130434784" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/layout/item_vehicles.xml" value="0.25" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/layout/layout_users.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/layout/nav_header.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xegiang1/app/src/main/res/menu/menu_bootom_nav.xml" value="0.25" />

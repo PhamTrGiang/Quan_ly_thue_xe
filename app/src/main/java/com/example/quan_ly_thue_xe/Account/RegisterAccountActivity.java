@@ -7,20 +7,31 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.quan_ly_thue_xe.DAO.UsersDAO;
 import com.example.quan_ly_thue_xe.R;
+import com.example.quan_ly_thue_xe.StartScreenActivity;
 
 public class RegisterAccountActivity extends AppCompatActivity {
     Button btnNext;
     EditText edUser ,edPass,edRepass;
     UsersDAO dao;
+    ImageView imgCallback;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
+        imgCallback = findViewById(R.id.idCallback);
+        imgCallback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getBaseContext(), StartScreenActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
         btnNext = findViewById(R.id.btnRegister);
         edUser = findViewById(R.id.edUsername);
         edPass = findViewById(R.id.edPassword);

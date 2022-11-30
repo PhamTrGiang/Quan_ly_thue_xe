@@ -1,45 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Account.RegisterInfoActivity">
+    tools:context=".Account.RegisterInfoActivity"
+    android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/idCallback"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_baseline_arrow_back_ios_new_24" />
+
+        <TextView
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Register"
+            android:textSize="30dp" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create account"
+        android:gravity="center"
+        android:textSize="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/teal_200"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fullname"
+            android:textSize="20dp"
+            android:textStyle="bold" />
         <EditText
             android:id="@+id/edName"
             android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
-            android:hint="Name"/>
+            android:hint="Fullname" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phonenumber"
+            android:layout_marginTop="20dp"
+            android:textSize="20dp"
+            android:textStyle="bold" />
         <EditText
             android:id="@+id/edPhoneNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Phonenumber"/>
+            android:layout_marginTop="10dp"
+            android:hint="Phonenumber" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Indentification"
+            android:layout_marginTop="20dp"
+            android:textSize="20dp"
+            android:textStyle="bold" />
         <EditText
             android:id="@+id/edIndentidication"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Indentidication"/>
+            android:layout_marginTop="10dp"
+            android:hint="Indentification" />
+
         <Button
             android:id="@+id/btnRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Register"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
             android:background="@drawable/backgroup_button_color"
+            android:text="Register"
             android:textColor="@color/white"
-            android:textSize="17dp"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center"/>
+            android:textSize="17dp" />
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
