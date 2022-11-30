@@ -53,9 +53,9 @@ public class Vehicles_Adapter extends ArrayAdapter<Vehicles> {
             tvPrice = v.findViewById(R.id.tvPrice);
             imgImage = v.findViewById(R.id.imgPicture);
 
-            tvName.setText(item.getName());
-            tvPrice.setText(item.getPrice()+"");
-            tvCate.setText(categories.getName());
+            tvName.setText("Xe   : "+item.getName());
+            tvPrice.setText("Giá  : "+item.getPrice()+"/1h");
+            tvCate.setText("Loại :"+categories.getName());
             byte[] image = item.getImage();
             Bitmap bitmap = BitmapFactory.decodeByteArray(image,0,image.length);
             imgImage.setImageBitmap(bitmap);

@@ -11,9 +11,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/anh2"
+        android:icon="@drawable/anh4"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/anh2"
+        android:roundIcon="@drawable/anh4"
         android:supportsRtl="true"
         android:theme="@style/Theme.Quan_ly_thue_xe">
         <activity

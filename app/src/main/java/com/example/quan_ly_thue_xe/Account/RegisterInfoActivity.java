@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.quan_ly_thue_xe.DAO.UsersDAO;
@@ -18,10 +19,20 @@ public class RegisterInfoActivity extends AppCompatActivity {
     Button btnRegister;
     EditText edName ,edPhoneNumber,edIndentification;
     UsersDAO dao;
+    ImageView imgCallback;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_info);
+        imgCallback = findViewById(R.id.idCallback);
+        imgCallback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getBaseContext(), StartScreenActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
         btnRegister = findViewById(R.id.btnRegister);
         edName = findViewById(R.id.edName);
         edPhoneNumber = findViewById(R.id.edPhoneNumber);
