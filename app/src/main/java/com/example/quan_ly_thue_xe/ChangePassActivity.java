@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.quan_ly_thue_xe.DAO.UsersDAO;
@@ -18,11 +19,19 @@ public class ChangePassActivity extends AppCompatActivity {
     Button btnChange;
     EditText edPass,edNewpass,edRepass;
     UsersDAO dao;
+    ImageView imgCallback;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_pass);
         btnChange = findViewById(R.id.btChange);
+        imgCallback = findViewById(R.id.idCallback);
+        imgCallback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         edPass = findViewById(R.id.edPass);
         edNewpass = findViewById(R.id.edNewPass);
         edRepass = findViewById(R.id.edNewPass);

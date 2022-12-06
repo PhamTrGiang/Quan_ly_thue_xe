@@ -30,6 +30,7 @@ public class OrdersDAO {
         values.put("total",obj.getTotal());
         values.put("status",obj.getStatus());
         values.put("incutted",obj.getIncutted());
+        values.put("date",obj.getDate());
         return db.insert("orders",null,values);
     }
     public int upadate(Orders obj){
@@ -41,6 +42,8 @@ public class OrdersDAO {
         values.put("total",obj.getTotal());
         values.put("status",obj.getStatus());
         values.put("incutted",obj.getIncutted());
+        values.put("date",obj.getDate());
+        values.put("giotraxe",obj.getGiotraxe());
         return db.update("orders",values,"id=?",new String[]{String.valueOf(obj.getId())});
     }
 
@@ -52,12 +55,22 @@ public class OrdersDAO {
         String sql = "SELECT * FROM orders";
         return getData(sql);
     }
+    public List<Orders> getUser(String id){
+        String sql = "SELECT * FROM orders WHERE users_id=?";
+        return getData(sql,id);
+    }
+    public List<Orders> getVehicle(String id){
+        String sql = "SELECT * FROM orders WHERE vehicles_id=? and status = 2";
+        return getData(sql,id);
+    }
+
 
     public Orders getId(String id){
         String sql = "SELECT * FROM orders WHERE id="+id;
         List<Orders> list = getData(sql);
         return list.get(0);
     }
+
 
     @SuppressLint("Range")
     private List<Orders> getData(String sql, String...selectionArgs){
@@ -67,12 +80,14 @@ public class OrdersDAO {
             Orders obj = new Orders();
             obj.setId(Integer.parseInt(c.getString(c.getColumnIndex("id"))));
             obj.setVehicles_id(Integer.parseInt(c.getString(c.getColumnIndex("vehicles_id"))));
-            obj.setUsers_id(Integer.parseInt(c.getString(c.getColumnIndex("users_id"))));
-            obj.setStart_time(Integer.parseInt(c.getString(c.getColumnIndex("start_time"))));
-            obj.setEnd_time(Integer.parseInt(c.getString(c.getColumnIndex("end_time"))));
+            obj.setUsers_id(c.getString(c.getColumnIndex("users_id")));
+            obj.setStart_time(c.getString(c.getColumnIndex("start_time")));
+            obj.setEnd_time(c.getString(c.getColumnIndex("end_time")));
             obj.setTotal(Integer.parseInt(c.getString(c.getColumnIndex("total"))));
             obj.setStatus(Integer.parseInt(c.getString(c.getColumnIndex("status"))));
             obj.setIncutted(Integer.parseInt(c.getString(c.getColumnIndex("incutted"))));
+            obj.setDate(c.getString(c.getColumnIndex("date")));
+            obj.setGiotraxe(c.getString(c.getColumnIndex("giotraxe")));
             list.add(obj);
         }
         return list;

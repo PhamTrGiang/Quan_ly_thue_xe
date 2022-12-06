@@ -98,8 +98,6 @@ public class FragmentHome extends Fragment {
             }
         });
 
-
-
     }
     private List<photo> getlisphoto(){
         List<photo> list = new ArrayList<>();
