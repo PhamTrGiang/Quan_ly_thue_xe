@@ -14,7 +14,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.quan_ly_thue_xe.DAO.CategoriesDAO;
-import com.example.quan_ly_thue_xe.Fragment.Frag_categories;
 import com.example.quan_ly_thue_xe.Fragment.Frag_vehicles;
 import com.example.quan_ly_thue_xe.Model.Categories;
 import com.example.quan_ly_thue_xe.Model.Vehicles;
@@ -56,6 +55,7 @@ public class Vehicles_Adapter extends ArrayAdapter<Vehicles> {
             tvName.setText("Xe   : "+item.getName());
             tvPrice.setText("Giá  : "+item.getPrice()+"/1h");
             tvCate.setText("Loại :"+categories.getName());
+
             byte[] image = item.getImage();
             Bitmap bitmap = BitmapFactory.decodeByteArray(image,0,image.length);
             imgImage.setImageBitmap(bitmap);

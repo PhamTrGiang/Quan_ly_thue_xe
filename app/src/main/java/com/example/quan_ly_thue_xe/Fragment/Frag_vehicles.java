@@ -68,7 +68,6 @@ public class Frag_vehicles extends Fragment {
     Dialog dialog;
     Spinner spinner;
     SpinAdapter_Categories spinAdapter_categories;
-    Categories categories;
     CategoriesDAO categoriesDAO;
     ArrayList<Categories> listCategories;
     int categories_id,position;

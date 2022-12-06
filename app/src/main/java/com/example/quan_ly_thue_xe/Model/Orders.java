@@ -1,9 +1,18 @@
 package com.example.quan_ly_thue_xe.Model;
 
 public class Orders {
-    private int id,vehicles_id,users_id,start_time,end_time,status,total,incutted;
+    private int id,vehicles_id,status,total,incutted;
+    private String start_time,end_time,date,users_id,giotraxe;
 
     public Orders() {
+    }
+
+    public String getGiotraxe() {
+        return giotraxe;
+    }
+
+    public void setGiotraxe(String giotraxe) {
+        this.giotraxe = giotraxe;
     }
 
     public int getId() {
@@ -22,27 +31,35 @@ public class Orders {
         this.vehicles_id = vehicles_id;
     }
 
-    public int getUsers_id() {
+    public String getUsers_id() {
         return users_id;
     }
 
-    public void setUsers_id(int users_id) {
+    public void setUsers_id(String users_id) {
         this.users_id = users_id;
     }
 
-    public int getStart_time() {
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getStart_time() {
         return start_time;
     }
 
-    public void setStart_time(int start_time) {
+    public void setStart_time(String start_time) {
         this.start_time = start_time;
     }
 
-    public int getEnd_time() {
+    public String getEnd_time() {
         return end_time;
     }
 
-    public void setEnd_time(int end_time) {
+    public void setEnd_time(String end_time) {
         this.end_time = end_time;
     }
 

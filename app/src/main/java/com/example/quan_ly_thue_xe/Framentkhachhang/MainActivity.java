@@ -24,6 +24,7 @@ import android.widget.TextView;
 import com.example.quan_ly_thue_xe.DAO.UsersDAO;
 import com.example.quan_ly_thue_xe.Fragment.Frag_categories;
 import com.example.quan_ly_thue_xe.Fragment.Frag_home;
+import com.example.quan_ly_thue_xe.Fragment.Frag_orders;
 import com.example.quan_ly_thue_xe.Fragment.Frag_users;
 import com.example.quan_ly_thue_xe.Fragment.Frag_vehicles;
 import com.example.quan_ly_thue_xe.Model.Users;
@@ -52,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
         Frag_home frg_home = new Frag_home();
         replaceFrg̣̣(frg_home);
         dao = new UsersDAO(this);
-        phanQuyen();
         SharedPreferences pref = getSharedPreferences("USER_FILE",MODE_PRIVATE);
         String id = pref.getString("id",null);
         Users obj = dao.getId(id);
@@ -107,7 +107,8 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.nav_orders:
                         setTitle("Quản lý phiếu mượn");
-
+                        Frag_orders frag_ordors = new Frag_orders();
+                        replaceFrg̣̣(frag_ordors);
 
                         break;
                     case R.id.nav_Bangxephang:
@@ -142,26 +143,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public boolean phanQuyen(){
-        if(Build.VERSION.SDK_INT>=23){
-            if(checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
-                    && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
-                    && checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED
-                    && checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
-                    && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
-            ){
-                return true;
-            }else{
-                ActivityCompat.requestPermissions(MainActivity.this,new String[]{
-                        Manifest.permission.READ_EXTERNAL_STORAGE,
-                        Manifest.permission.CAMERA,
-                        Manifest.permission.ACCESS_FINE_LOCATION,
-                        Manifest.permission.ACCESS_COARSE_LOCATION,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
-                return false;
-            }
-        }else{
-            return true;
-        }
-    }
+
 }

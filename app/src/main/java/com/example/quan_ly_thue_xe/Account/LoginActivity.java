@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.quan_ly_thue_xe.DAO.UsersDAO;
+import com.example.quan_ly_thue_xe.Framentkhachhang.MainActivity;
 import com.example.quan_ly_thue_xe.Framentkhachhang.Menu;
 import com.example.quan_ly_thue_xe.Model.Users;
 import com.example.quan_ly_thue_xe.R;
@@ -63,12 +64,19 @@ public class LoginActivity extends AppCompatActivity {
         }else{
             if(dao.checkLogin(strUser,strPass)>0){
                 Toast.makeText(this, "Login thành công", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(getApplicationContext(), Menu.class);
+
                 SharedPreferences pref = getSharedPreferences("USER_FILE",MODE_PRIVATE);
                 SharedPreferences.Editor edit = pref.edit();
                 edit.putString("id",strUser);
                 edit.commit();
-                startActivity(i);
+                if (dao.getId(strUser).getStatus() == 3 || dao.getId(strUser).getStatus() == 2){
+                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(i);
+                }else{
+                    Intent i = new Intent(getApplicationContext(), Menu.class);
+                    startActivity(i);
+                }
+
                 finish();
             }else{
                 Toast.makeText(this, "Tên đăng nhập và mật khẩu không đúng", Toast.LENGTH_SHORT).show();
