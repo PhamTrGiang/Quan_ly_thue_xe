@@ -1,5 +1,6 @@
 package com.example.quan_ly_thue_xe.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -37,6 +38,7 @@ public class History_Adapter extends ArrayAdapter<Orders> {
         this.list = list;
     }
 
+    @SuppressLint("Range")
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -60,11 +62,14 @@ public class History_Adapter extends ArrayAdapter<Orders> {
         tvEnd.setText("Giờ trả : "+obj.getEnd_time());
         String status = "";
         if(obj.getStatus()==2){
+            status = "Chờ xác nhận";
+            tvStatus.setTextColor(Color.parseColor("#0000FF"));
+        }else if(obj.getStatus()==1){
+            status = "Đã trả xe";
+            tvStatus.setTextColor(Color.parseColor("#FF03DAC5"));
+        }else{
             status = "Đang thuê xe";
             tvStatus.setTextColor(Color.parseColor("#FF0000"));
-        }else{
-            status = "Đã trả xe";
-            tvStatus.setTextColor(Color.parseColor("#0000FF"));
         }
         tvStatus.setText(status);
         tvTong.setText("Tổng tiền : "+obj.getTotal()+"vnđ");

@@ -12,11 +12,12 @@ import java.util.ArrayList;
 
 public class SpinAdapter_Position extends BaseAdapter {
     Context context;
-    String[] list= {"Khách hàng","Nhân viên"};
+    String[] list;
     TextView tvName;
 
-    public SpinAdapter_Position(Context context) {
+    public SpinAdapter_Position(Context context, String[] list) {
         this.context = context;
+        this.list = list;
     }
 
     @Override
@@ -44,7 +45,7 @@ public class SpinAdapter_Position extends BaseAdapter {
         String item = list[position];
 
         tvName = v.findViewById(R.id.tvItemspinner);
-        tvName.setText("Position          : "+item);
+        tvName.setText(item);
 
         return v;
     }

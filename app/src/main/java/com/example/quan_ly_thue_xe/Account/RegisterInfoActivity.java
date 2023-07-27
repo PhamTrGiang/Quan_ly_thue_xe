@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.quan_ly_thue_xe.DAO.UsersDAO;
@@ -20,16 +22,26 @@ public class RegisterInfoActivity extends AppCompatActivity {
     EditText edName ,edPhoneNumber,edIndentification;
     UsersDAO dao;
     ImageView imgCallback;
+    TextView tvTran;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_info);
+        tvTran =  findViewById(R.id.tvTran);
+        tvTran.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i2 = new Intent(getBaseContext(), LoginActivity.class);
+                startActivity(i2);
+                finish();
+            }
+        });
         imgCallback = findViewById(R.id.idCallback);
         imgCallback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getBaseContext(), StartScreenActivity.class);
-                startActivity(i);
+                Intent i2 = new Intent(getBaseContext(), StartScreenActivity.class);
+                startActivity(i2);
                 finish();
             }
         });
@@ -56,7 +68,7 @@ public class RegisterInfoActivity extends AppCompatActivity {
                     obj.setStatus(1);
                     if(dao.insert(obj)>0){
                         Toast.makeText(RegisterInfoActivity.this, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
-                        Intent home = new Intent(getBaseContext(), StartScreenActivity.class);
+                        Intent home = new Intent(getBaseContext(), LoginActivity.class);
                         startActivity(home);
                         finish();
 

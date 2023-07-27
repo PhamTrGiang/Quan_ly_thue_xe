@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.quan_ly_thue_xe.Fragment.Frag_categories;
+import com.example.quan_ly_thue_xe.FragmentQuanly.Frag_categories;
 import com.example.quan_ly_thue_xe.Model.Categories;
 import com.example.quan_ly_thue_xe.R;
 

@@ -6,11 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Framentkhachhang.Menu">
 
-<!--    <androidx.viewpager.widget.ViewPager-->
-<!--        android:id="@+id/view_pager2"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_above="@+id/bootom_nav" />-->
 
     <FrameLayout
         android:id="@+id/flContent"

@@ -1,19 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/drawable-v24/background_start.xml" value="0.2045" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/drawable-v24/backgroup_button_nocolor_register.xml" value="0.2045" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/drawable-v24/thoat.xml" value="0.2045" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/drawable/admin.xml" value="0.2045" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/drawable/backgroud_quanlyloaixe.xml" value="0.2045" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/drawable/background_info.xml" value="0.2045" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/drawable/background_item.xml" value="0.2045" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/drawable/background_login.xml" value="0.2045" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/drawable/background_start.xml" value="0.2045" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/drawable/backgroup_button_color.xml" value="0.212" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/drawable/backgroup_button_nocolor.xml" value="0.212" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/drawable/img_info.xml" value="0.1775" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/activity_change_pass.xml" value="0.22826086956521738" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/activity_edit_infomation.xml" value="0.25" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/activity_infomation.xml" value="0.22826086956521738" />
-        <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/activity_menu.xml" value="0.2" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/activity_register.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/activity_register_info.xml" value="0.22826086956521738" />
-        <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/activity_start_screen.xml" value="0.22826086956521738" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/activity_start_screen.xml" value="0.264" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/dig_categories.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/dig_chose_image.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/dig_orders.xml" value="0.25" />
@@ -24,14 +33,19 @@
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/fragment_blank.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/fragment_cuahang.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/fragment_frag_categories.xml" value="0.22826086956521738" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/fragment_frag_doanhthu_thang.xml" value="0.25" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/fragment_frag_home.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/fragment_frag_orders.xml" value="0.25" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/fragment_frag_rank.xml" value="0.25" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/fragment_frag_vehicles.xml" value="0.22826086956521738" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/fragment_home.xml" value="0.10989583333333333" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/fragment_orders.xml" value="0.25" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/fragment_settinh.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/item_categories.xml" value="0.22826086956521738" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/item_doanhthu.xml" value="0.25" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/item_history.xml" value="0.25" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/item_orders.xml" value="0.25" />
+        <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/item_rank.xml" value="0.25" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/item_shop.xml" value="0.25" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/item_spinner.xml" value="0.22826086956521738" />
         <entry key="..\:/Du_an_1/Quan_ly_thue_xe/app/src/main/res/layout/item_vehicles.xml" value="0.22826086956521738" />
@@ -139,7 +153,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

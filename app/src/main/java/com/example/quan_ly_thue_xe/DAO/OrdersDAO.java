@@ -60,8 +60,12 @@ public class OrdersDAO {
         return getData(sql,id);
     }
     public List<Orders> getVehicle(String id){
-        String sql = "SELECT * FROM orders WHERE vehicles_id=? and status = 2";
+        String sql = "SELECT * FROM orders WHERE vehicles_id=? and status = 3";
         return getData(sql,id);
+    }
+    public List<Orders> getMonth(String date){
+        String sql = "SELECT * FROM orders WHERE status = 1 and date LIKE "+date;
+        return getData(sql);
     }
 
 

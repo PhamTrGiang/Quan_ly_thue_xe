@@ -44,13 +44,27 @@
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-    <Spinner
-        android:id="@+id/spPosition"
+    <LinearLayout
         android:layout_width="340dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:textAlignment="center"
-        />
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:text="Loại tài khoản : "
+            />
+        <Spinner
+            android:id="@+id/spPosition"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            />
+    </LinearLayout>
+
     <Button
         android:id="@+id/btnDone"
         android:layout_width="150dp"

@@ -3,6 +3,7 @@ package com.example.quan_ly_thue_xe.Adapter;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 
 import com.example.quan_ly_thue_xe.DAO.CategoriesDAO;
 import com.example.quan_ly_thue_xe.DAO.OrdersDAO;
@@ -39,8 +41,8 @@ import java.util.Calendar;
 public class Shop_Adapter extends ArrayAdapter<Vehicles> {
     private Context context;
     FragmentCuahang fragment;
-    TextView tvName,tvPrice,tvStatus;
-    Button btnOrder,btnMore;
+    TextView tvName,tvPrice,tvAmount;
+    Button btnOrder;
     ImageView imgImage;
     private ArrayList<Vehicles> list;
     private ArrayList<Orders> listOrders;
@@ -70,23 +72,20 @@ public class Shop_Adapter extends ArrayAdapter<Vehicles> {
             tvName = v.findViewById(R.id.tvName);
             tvPrice = v.findViewById(R.id.tvPrice);
             imgImage = v.findViewById(R.id.imgPhoto);
-            tvStatus = v.findViewById(R.id.tvStatus);
-            btnMore = v.findViewById(R.id.btnMore);
+            tvAmount = v.findViewById(R.id.tvAmount);
             btnOrder = v.findViewById(R.id.btnOrders);
 
             tvName.setText(item.getName());
-            tvPrice.setText("Giá  : "+item.getPrice()+"/1h");
+            tvPrice.setText("Giá thuê: "+item.getPrice()+"/1h");
             OrdersDAO ordersDAO = new OrdersDAO(getContext());
             listOrders = (ArrayList<Orders>) ordersDAO.getVehicle(item.getId()+"");
-            String status = "";
-            if(listOrders.size() != 0 ){
-                status = "Xe đang được thuê";
-                tvStatus.setTextColor(Color.parseColor("#FF0000"));
+            if(listOrders.size() >= item.getAmount() ){
+                tvAmount.setTextColor(Color.parseColor("#FF3333"));
             }else{
-                status = "Còn xe";
-                tvStatus.setTextColor(Color.parseColor("#0000FF"));
+                tvAmount.setTextColor(Color.parseColor("#FF03DAC5"));
             }
-            tvStatus.setText(status);
+            int amount = item.getAmount()-listOrders.size();
+            tvAmount.setText("Số lượng: "+amount);
 
 
             byte[] image = item.getImage();
@@ -97,7 +96,7 @@ public class Shop_Adapter extends ArrayAdapter<Vehicles> {
             btnOrder.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(listOrders.size() !=0){
+                    if(listOrders.size() >= item.getAmount()){
                         Toast.makeText(getContext(), "Hiện không còn xe", Toast.LENGTH_SHORT).show();
                     }else{
                         openDialog(item);
@@ -105,12 +104,7 @@ public class Shop_Adapter extends ArrayAdapter<Vehicles> {
 
                 }
             });
-            btnMore.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
 
-                }
-            });
         }
 
         return v;
@@ -119,24 +113,26 @@ public class Shop_Adapter extends ArrayAdapter<Vehicles> {
     Dialog dialog;
     Button btnAccess,btnCancel;
     EditText edName,edPrice,edTotal,edEnd;
-    ImageView imgTime;
+    ImageView imgTime,imgNote;
 
     public void openDialog(Vehicles obj){
         Orders item = new Orders();
         Calendar calendar = Calendar.getInstance();
         int day = calendar.get(Calendar.DAY_OF_MONTH);
-        int month = calendar.get(Calendar.MONTH);
+        int month = calendar.get(Calendar.MONTH)+1;
         int year = calendar.get(Calendar.YEAR);
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
         int minuteStart = calendar.get(Calendar.MINUTE);
-        Toast.makeText(context, hour+":"+minuteStart, Toast.LENGTH_SHORT).show();
         dialog = new Dialog(context);
         dialog.setContentView(R.layout.dig_orders);
+
         edName = dialog.findViewById(R.id.edName);
         edPrice = dialog.findViewById(R.id.edPrice);
         edTotal = dialog.findViewById(R.id.edTotal);
         edEnd = dialog.findViewById(R.id.edEnd);
+
         imgTime = dialog.findViewById(R.id.imgTime);
+        imgNote = dialog.findViewById(R.id.imgNote);
 
         btnAccess=dialog.findViewById(R.id.btnAccess);
         btnCancel = dialog.findViewById(R.id.btnCancel);
@@ -151,12 +147,6 @@ public class Shop_Adapter extends ArrayAdapter<Vehicles> {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                         edEnd.setText(hourOfDay+":"+minute);
-                        int gioao = 0;
-                        if(minute<minuteStart){
-                            gioao = 0;
-                        }else{
-                            gioao = 1;
-                        }
                         double tongtien = (hourOfDay-hour+((double)minute+60-(double)minuteStart)/60-1)*obj.getPrice();
                         edTotal.setText((int) Math.round(tongtien)+"");
                     }
@@ -165,6 +155,26 @@ public class Shop_Adapter extends ArrayAdapter<Vehicles> {
             }
         });
 
+        imgNote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                builder.setTitle("Lưu ý khi thuê xe");
+                builder.setMessage("1. Khi thuê xe phải đặt cọc 500000vnđ/xe hoặc để lại giấy tờ tuy thân để lấy xe"
+                +"\n2. Phải trả xe muộn nhất là 15p sau giờ trả nếu không giá tiền thuê xe tăng thêm 25% tính từ 15p sau giờ trả"
+                +"\n3. Mọi hư hỏng nghiệm trọng hoặc mất xe đều phải bồi thường cho của hàng");
+                builder.setCancelable(true);
+                builder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                AlertDialog alert = builder.create();
+                builder.show();
+            }
+        });
 
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -179,7 +189,7 @@ public class Shop_Adapter extends ArrayAdapter<Vehicles> {
                 SharedPreferences pref = getContext().getSharedPreferences("USER_FILE",Context.MODE_PRIVATE);
                 String user_id = pref.getString("id",null);
                 item.setVehicles_id(obj.getId());
-                item.setDate(day+"-"+month+"-"+year);
+                item.setDate(day+"-"+(month+1)+"-"+year);
                 item.setStatus(2);
                 item.setStart_time(hour+":"+minuteStart);
                 item.setEnd_time(edEnd.getText().toString());

@@ -15,13 +15,13 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String tb_users = "CREATE TABLE users (id TEXT PRIMARY KEY,name TEXT,indentification TEXT,phone_number TEXT,password TEXT,status INTEGER)";
+        String tb_users = "CREATE TABLE users (id TEXT PRIMARY KEY,name TEXT, image BLOB,indentification TEXT,phone_number TEXT,password TEXT,status INTEGER)";
         db.execSQL(tb_users);
         String tb_categories ="CREATE TABLE categories (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT)";
         db.execSQL(tb_categories);
-        String tb_vehicles ="CREATE TABLE vehicles (id INTEGER PRIMARY KEY AUTOINCREMENT, categories_id INTEGER, name TEXT, price INTEGER, image BLOB, FOREIGN KEY (categories_id) REFERENCES categories (id))";
+        String tb_vehicles ="CREATE TABLE vehicles (id INTEGER PRIMARY KEY AUTOINCREMENT, categories_id INTEGER, name TEXT, price INTEGER,amount  INTEGER, image BLOB, FOREIGN KEY (categories_id) REFERENCES categories (id))";
         db.execSQL(tb_vehicles);
-        String tb_orders = "CREATE TABLE orders (id INTEGER PRIMARY KEY AUTOINCREMENT, start_time TIME, end_time TIME,giotraxe TIME, total INTEGER, incutted INTEGER, status INTEGER, vehicles_id INTEGER, users_id INTEGER, date DATE, FOREIGN KEY (vehicles_id) REFERENCES vehicles (id), FOREIGN KEY (users_id) REFERENCES users (id))";
+        String tb_orders = "CREATE TABLE orders (id INTEGER PRIMARY KEY AUTOINCREMENT, start_time TIME, end_time TIME,giotraxe TIME, total INTEGER, incutted INTEGER, status INTEGER, vehicles_id INTEGER, users_id INTEGER, date TEXT, FOREIGN KEY (vehicles_id) REFERENCES vehicles (id), FOREIGN KEY (users_id) REFERENCES users (id))";
         db.execSQL(tb_orders);
     }
 

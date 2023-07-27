@@ -1,14 +1,14 @@
 <resources>
-    <string name="app_name">Quan_ly_thue_xe</string>
+    <string name="app_name">Gigle</string>
     <string name="navigationdrawer_open">Open navigation drawer</string>
     <string name="navigationdrawer_close">Close navigation drawer</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBHPTmJN9Jxx6c6n9M8jH3itBowMnTiMSM</string>
     <string name="action_hom">Home</string>
-    <string name="action_cuahang">Cửa hàng</string>
-    <string name="action_don">Hóa đơn</string>
-    <string name="action_settinh">Settinh</string>
+    <string name="action_cuahang">Shop</string>
+    <string name="action_don">History</string>
+    <string name="action_settinh">Setting</string>
     <string name="action_admin">admin</string>
 
 </resources>

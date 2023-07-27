@@ -26,6 +26,7 @@ public class VehiclesDAO {
         values.put("name",obj.getName());
         values.put("price",obj.getPrice());
         values.put("image",obj.getImage());
+        values.put("amount",obj.getAmount());
         return db.insert("vehicles",null,values);
     }
     public int upadate(Vehicles obj){
@@ -34,6 +35,7 @@ public class VehiclesDAO {
         values.put("name",obj.getName());
         values.put("price",obj.getPrice());
         values.put("image",obj.getImage());
+        values.put("amount",obj.getAmount());
         return db.update("vehicles",values,"id=?",new String[]{String.valueOf(obj.getId())});
     }
 
@@ -63,6 +65,7 @@ public class VehiclesDAO {
             obj.setName(c.getString(c.getColumnIndex("name")));
             obj.setPrice(Integer.parseInt(c.getString(c.getColumnIndex("price"))));
             obj.setImage(c.getBlob(c.getColumnIndex("image")));
+            obj.setAmount(Integer.parseInt(c.getString(c.getColumnIndex("amount"))));
             list.add(obj);
         }
         return list;

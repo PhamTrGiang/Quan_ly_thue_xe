@@ -20,19 +20,20 @@ import androidx.appcompat.app.AlertDialog;
 
 import com.example.quan_ly_thue_xe.DAO.OrdersDAO;
 import com.example.quan_ly_thue_xe.DAO.VehiclesDAO;
-import com.example.quan_ly_thue_xe.Fragment.Frag_orders;
+import com.example.quan_ly_thue_xe.FragmentQuanly.Frag_orders;
 import com.example.quan_ly_thue_xe.Model.Orders;
 import com.example.quan_ly_thue_xe.Model.Vehicles;
 import com.example.quan_ly_thue_xe.R;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class Orders_Adapter extends ArrayAdapter<Orders> {
     private Context context;
     Frag_orders fragment;
     TextView tvName,tvEnd,tvStart,tvTong,tvUser,tvDate,tvGiotra,tvTrathem;
     Button btnStatus;
-    private ArrayList<Orders> list;
+    private ArrayList<Orders> list,listCheck;
     OrdersDAO dao;
     ListView lv;
 
@@ -73,13 +74,22 @@ public class Orders_Adapter extends ArrayAdapter<Orders> {
         tvTrathem.setText("Tiền trả thêm : "+obj.getIncutted()+"vnđ");
 
         tvDate.setText("Ngày : "+obj.getDate());
-        tvGiotra.setText("Giờ trả : "+obj.getGiotraxe());
-
+        if(obj.getGiotraxe()==null){
+            tvGiotra.setText("Giờ trả : --:--");
+        }else {
+            tvGiotra.setText("Giờ trả : " + obj.getGiotraxe());
+        }
         tvTong.setText("Tổng tiền : "+obj.getTotal()+"vnđ");
+
+        listCheck = (ArrayList<Orders>) dao.getVehicle(obj.getVehicles_id()+"");
         if(obj.getStatus()==1){
             btnStatus.setText("Đã trả xe");
             btnStatus.setBackgroundResource(R.drawable.backgroup_button_color);
             btnStatus.setTextColor(Color.parseColor("#FFFFFFFF"));
+        }else if(obj.getStatus()==2){
+            btnStatus.setText("Chờ xác nhận");
+            btnStatus.setBackgroundResource(R.drawable.backgroup_button_nocolor);
+            btnStatus.setTextColor(Color.parseColor("#FF3333"));
         }else{
             btnStatus.setText("Đang thuê xe");
             btnStatus.setBackgroundResource(R.drawable.backgroup_button_nocolor);
@@ -91,8 +101,8 @@ public class Orders_Adapter extends ArrayAdapter<Orders> {
             public void onClick(View v) {
                 if(obj.getStatus()==2) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                    builder.setTitle("Change");
-                    builder.setMessage("Bạn có muốn thay đổi không ?");
+                    builder.setTitle("Xác nhận");
+                    builder.setMessage("Xác nhận cho thuê xe ?");
                     builder.setCancelable(true);
                     builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
@@ -101,7 +111,8 @@ public class Orders_Adapter extends ArrayAdapter<Orders> {
                             fragment.changeStatus(obj);
                             tvGiotra.setText("Giờ trả : "+obj.getGiotraxe());
                             tvTrathem.setText("Tiền trả thêm : "+obj.getIncutted()+"vnđ");
-                            tvTong.setText("Tổng tiền : "+obj.getTotal()+obj.getIncutted()+"vnđ");
+                            int tong = obj.getTotal()+obj.getIncutted();
+                            tvTong.setText("Tổng tiền : "+tong+"vnđ");
                             dialog.cancel();
                         }
                     });
@@ -113,8 +124,33 @@ public class Orders_Adapter extends ArrayAdapter<Orders> {
                     });
                     AlertDialog alert = builder.create();
                     builder.show();
-                }else{
+                }else if(obj.getStatus()==1){
                     Toast.makeText(fragment.getContext(), "Xe đã được trả", Toast.LENGTH_SHORT).show();
+                }else{
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    builder.setTitle("Xác nhận");
+                    builder.setMessage("Xác nhận xe đã trả ?");
+                    builder.setCancelable(true);
+                    builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                            fragment.changeStatus(obj);
+                            tvGiotra.setText("Giờ trả : "+obj.getGiotraxe());
+                            tvTrathem.setText("Tiền trả thêm : "+obj.getIncutted()+"vnđ");
+                            int tong = obj.getTotal()+obj.getIncutted();
+                            tvTong.setText("Tổng tiền : "+tong+"vnđ");
+                            dialog.cancel();
+                        }
+                    });
+                    builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+                    AlertDialog alert = builder.create();
+                    builder.show();
                 }
 
             }

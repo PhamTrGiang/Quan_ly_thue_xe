@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.quan_ly_thue_xe.DAO.UsersDAO;
@@ -19,10 +20,20 @@ public class RegisterAccountActivity extends AppCompatActivity {
     EditText edUser ,edPass,edRepass;
     UsersDAO dao;
     ImageView imgCallback;
+    TextView tvTran;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        tvTran =  findViewById(R.id.tvTran);
+        tvTran.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i2 = new Intent(getBaseContext(), LoginActivity.class);
+                startActivity(i2);
+                finish();
+            }
+        });
         imgCallback = findViewById(R.id.idCallback);
         imgCallback.setOnClickListener(new View.OnClickListener() {
             @Override

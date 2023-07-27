@@ -3,6 +3,8 @@ package com.example.quan_ly_thue_xe.Model;
 public class Users {
     private String name,indentification,phone_number,password,id;
     private int status;
+    byte[] image;
+
     public Users() {
     }
 
@@ -14,6 +16,14 @@ public class Users {
         this.password = password;
         this.id = id;
         this.status = status;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 
     public int getStatus() {
