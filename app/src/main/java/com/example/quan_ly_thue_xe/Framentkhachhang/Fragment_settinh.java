@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import com.example.quan_ly_thue_xe.ChangePassActivity;
 import com.example.quan_ly_thue_xe.DAO.UsersDAO;
 
+import com.example.quan_ly_thue_xe.FragmentQuanly.MainActivity;
 import com.example.quan_ly_thue_xe.InfomationActivity;
 import com.example.quan_ly_thue_xe.Model.Users;
 import com.example.quan_ly_thue_xe.R;
@@ -70,7 +71,7 @@ public class Fragment_settinh extends Fragment {
         admin1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(),MainActivity.class);
+                Intent intent = new Intent(getContext(), MainActivity.class);
                 startActivity(intent);
 
 

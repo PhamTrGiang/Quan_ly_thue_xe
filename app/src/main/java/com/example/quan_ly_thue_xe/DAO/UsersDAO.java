@@ -3,13 +3,20 @@ package com.example.quan_ly_thue_xe.DAO;
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 
 import com.example.quan_ly_thue_xe.DbHelper.DbHelper;
 import com.example.quan_ly_thue_xe.Model.Users;
+import com.example.quan_ly_thue_xe.R;
 
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,6 +45,7 @@ public class UsersDAO {
         values.put("indentification",obj.getIndentification());
         values.put("phone_number",obj.getPhone_number());
         values.put("status",obj.getStatus());
+        values.put("image",obj.getImage());
         return db.update("users",values,"id=?",new String[]{String.valueOf(obj.getId())});
     }
     public int changePass(Users obj){
@@ -73,6 +81,7 @@ public class UsersDAO {
             obj.setIndentification(c.getString(c.getColumnIndex("indentification")));
             obj.setPhone_number(c.getString(c.getColumnIndex("phone_number")));
             obj.setStatus(Integer.parseInt(c.getString(c.getColumnIndex("status"))));
+            obj.setImage(c.getBlob(c.getColumnIndex("image")));
             list.add(obj);
         }
         return list;

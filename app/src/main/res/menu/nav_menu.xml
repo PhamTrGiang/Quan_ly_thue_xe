@@ -3,18 +3,15 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_baseline_home_24"
             android:title="Trang chủ"/>
         <item
             android:id="@+id/nav_categories"
-            android:icon="@drawable/ic_baseline_category_24"
             android:title="Quản lý loại xe"/>
         <item
             android:id="@+id/nav_vehicles"
             android:title="Quản lý xe"/>
         <item
             android:id="@+id/nav_orders"
-            android:icon="@drawable/ic_baseline_people_24"
             android:title="Quản lý phiếu mượn"/>
 
     </group>
@@ -22,11 +19,9 @@
         <menu>
             <item
                 android:id="@+id/nav_Bangxephang"
-                android:icon="@drawable/ic_baseline_bar_chart_24"
                 android:title="Bảng xếp hạng"/>
             <item
                 android:id="@+id/nav_doanhthu"
-                android:icon="@drawable/ic_baseline_attach_money_24"
                 android:title="Doanh thu"/>
         </menu>
     </item>
@@ -36,10 +31,13 @@
         <menu>
             <item
                 android:id="@+id/nav_users"
-                android:icon="@drawable/ic_baseline_people_24"
                 android:title="Quản lý người dùng"
 
                 />
         </menu>
     </item>
+    <item android:title="Đăng xuất"
+        android:id="@+id/logout"
+        />
+
 </menu>

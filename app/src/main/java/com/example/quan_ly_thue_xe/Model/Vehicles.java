@@ -1,11 +1,19 @@
 package com.example.quan_ly_thue_xe.Model;
 
 public class Vehicles {
-    private int id,categories_id,price;
+    private int id,categories_id,price,amount;
     private String name;
     byte[] image;
 
     public Vehicles() {
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
     public byte[] getImage() {

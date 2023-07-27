@@ -14,7 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.quan_ly_thue_xe.DAO.CategoriesDAO;
-import com.example.quan_ly_thue_xe.Fragment.Frag_vehicles;
+import com.example.quan_ly_thue_xe.FragmentQuanly.Frag_vehicles;
 import com.example.quan_ly_thue_xe.Model.Categories;
 import com.example.quan_ly_thue_xe.Model.Vehicles;
 import com.example.quan_ly_thue_xe.R;
@@ -25,7 +25,7 @@ public class Vehicles_Adapter extends ArrayAdapter<Vehicles> {
     private Context context;
     Frag_vehicles fragment;
     private ArrayList<Vehicles> list;
-    TextView tvName,tvCate,tvPrice;
+    TextView tvName,tvCate,tvPrice,tvAmount;
     ImageView imgDel,imgEdit,imgImage;
 
     public Vehicles_Adapter(@NonNull Context context, Frag_vehicles fragment, ArrayList<Vehicles> list) {
@@ -51,10 +51,12 @@ public class Vehicles_Adapter extends ArrayAdapter<Vehicles> {
             tvCate = v.findViewById(R.id.tvCate);
             tvPrice = v.findViewById(R.id.tvPrice);
             imgImage = v.findViewById(R.id.imgPicture);
+            tvAmount = v.findViewById(R.id.tvAmount);
 
             tvName.setText("Xe   : "+item.getName());
             tvPrice.setText("Giá  : "+item.getPrice()+"/1h");
             tvCate.setText("Loại :"+categories.getName());
+            tvAmount.setText("Số lượng : "+item.getAmount());
 
             byte[] image = item.getImage();
             Bitmap bitmap = BitmapFactory.decodeByteArray(image,0,image.length);

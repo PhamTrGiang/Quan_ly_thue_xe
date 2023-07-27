@@ -17,6 +17,7 @@ import com.example.quan_ly_thue_xe.Model.Orders;
 import com.example.quan_ly_thue_xe.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 
 public class FragmentOrders extends Fragment {
@@ -43,6 +44,7 @@ public class FragmentOrders extends Fragment {
     void capnhap(){
         String id = pref.getString("id",null);
         list = (ArrayList<Orders>) dao.getUser(id);
+        Collections.reverse(list);
         adapter = new History_Adapter(getContext(),this,list);
         lv.setAdapter(adapter);
     }
